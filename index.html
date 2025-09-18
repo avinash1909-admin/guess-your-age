@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Guess App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #74ebd5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 2px solid #74ebd5;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+    button {
+      background: #74ebd5;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #4bb8a9;
+      color: white;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Guess Your Age</h2>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <br>
+    <button onclick="showAge()">Submit</button>
+    <div class="result" id="result"></div>
+  </div>                                               
+  <script>
+    function showAge() {
+      const age = document.getElementById("ageInput").value;
+      const result = document.getElementById("result");
+
+      if(age === "" || age <= 0){
+        result.innerHTML = "❌ Please enter a valid age.";
+      } else {
+        result.innerHTML = "🎉 Your age is: " + age;
+      }
+    }
+  </script>
+</body>
+</html>
+
+
